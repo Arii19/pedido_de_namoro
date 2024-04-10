@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sem pressão</title>
+
+    <style>
+        body{
+            background-color: palevioletred;
+        }
+        .painel{
+            background-color: white;
+            margin:auto;
+            width: 600px;
+            height: 600px;
+            border-radius:20px;
+            text-align: center;
+            padding-top: 50px;
+            font-family: Arial, Helvetica, sans-serif;
+            
+        }
+        #sim{
+            height: 50px;
+            width: 70px;
+            background-color: red;
+            border:  2px solid white;
+            border-radius: 10px;
+            color: white;
+            font-size: 20px;
+            margin-left: -95px;
+        }
+        #nao{
+            position: absolute;
+            height: 50px;
+            width: 70px;
+            background-color: red;
+            border: 2px solid white;
+            border-radius: 10px;
+            color: white;
+            margin-left: 30px;
+            font-size: 20px;
+        }
+        #ursinho{
+            display: flex;
+            justify-content:center;
+            margin-top: 25px;
+        }
+    </style>
+</head>
+<body>
+    <div class="painel">
+        <h1>Sem nenhuma pressão</h1>
+        <div id="ursinho"><img src="/ursinhos-fofos-mordidas.gif" alt="">
+        </div>
+
+        <h2>Aceita namorar comigo?</h2>
+        
+        <button id="sim" onclick="parabens()"> Sim! </button>
+        <button onmouseover="fuja()" id="nao"> Não!</button>
+    </div>
+       
+        <script>
+            function fuja(){
+                var botaoNao = document.getElementById("nao")
+
+                var larguraJanela = window.innerWidth;
+                var alturaJanela = window.innerHeight;
+
+                var maxX = larguraJanela - botaoNao.offsetWidth;
+                var maxY = alturaJanela - botaoNao.offsetHeight;
+
+                var aleatorioX = Math.floor(Math.random() * maxX);
+                var aleatorioY = Math.floor(Math.random() * maxY);
+
+                botaoNao.style.left = aleatorioX + "px";
+                botaoNao.style.top = aleatorioY + "px";
+            }
+            function parabens(){
+                alert("Viu, nem foi tão dificil assim ;)")
+            }
+        </script>
+
+    
+</body>
+</html>
